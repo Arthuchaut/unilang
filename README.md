@@ -43,3 +43,22 @@ And the follow `Hello World!` programm will looks like:
 
 :pencil: Notice that each instruction can be defined with a string length between 1 and "infinit".  
 Also, every character that is not in the instruction set is interpreted like a comment.
+
+## Usage guid
+
+The interpreter can be used by passing the instructions directly in the command line or by specify a file pass to an Unilang script.  
+
+**Examples:**
+
+```sh
+python -m src "<unilang_instructions>"
+```
+
+**Or:**
+
+```sh
+python -m src ./path/to/my/unilang/script
+```
+
+To change the syntax of the instruction set, we have to hard code them in the `_Statement` enumerator of the `./src/engine.py` file.  
+Maybe I'll implement a config file later but I'm too lazy for that now. 🐇
