@@ -3,16 +3,26 @@ import re
 from typing import ClassVar, Deque, Mapping, Sequence
 from collections import deque
 
+"""
+>	Ook. Ook?	Move the pointer to the right
+<	Ook? Ook.	Move the pointer to the left
++	Ook. Ook.	Increment the memory cell under the pointer
+-	Ook! Ook!	Decrement the memory cell under the pointer
+.	Ook! Ook.	Output the character signified by the cell at the pointer
+,	Ook. Ook!	Input a character and store it in the cell at the pointer
+[	Ook! Ook?	Jump past the matching Ook? Ook! if the cell under the pointer is 0
+]	Ook? Ook!	Jump back to the matching Ook! Ook?
+"""
 
 class _Statement(enum.Enum):
-    INC_PTN: str = "🐇"     # Increment the pointer​
-    DEC_PTN: str = "🐬"     # Decrement the pointer
-    INC_BYTE: str = "🐌"    # Increment the byte in the current pointed memory case 
-    DEC_BYTE: str = "🦧"    # Decrement the byte in the current pointed memory case
-    WRITE: str = "🙈"       # Write the ASCII value of the current pointed memory case
-    READ: str = "🐢"        # Read the value and pass it to the current pointed memory case
-    GO_FW: str = "🦆"       # Jump after the matched GO_BK if the pointed byte equal 0
-    GO_BK: str = "🦛"       # Back after the matched GO_FW if the pointed byte is different than 0
+    INC_PTN: str = "Ook.Ook?"     # Increment the pointer​
+    DEC_PTN: str = "Ook?Ook."     # Decrement the pointer
+    INC_BYTE: str = "Ook.Ook."    # Increment the byte in the current pointed memory case 
+    DEC_BYTE: str = "Ook!Ook!"    # Decrement the byte in the current pointed memory case
+    WRITE: str = "Ook!Ook."       # Write the ASCII value of the current pointed memory case
+    READ: str = "Ook.Ook!"        # Read the value and pass it to the current pointed memory case
+    GO_FW: str = "Ook!Ook?"       # Jump after the matched GO_BK if the pointed byte equal 0
+    GO_BK: str = "Ook?Ook!"       # Back after the matched GO_FW if the pointed byte is different than 0
 
 
 class Engine:
