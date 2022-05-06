@@ -11,7 +11,7 @@ class _Statement(enum.Enum):
     DEC_BYTE: str = "🦧"    # Decrement the byte in the current pointed memory case
     WRITE: str = "🙈"       # Write the ASCII value of the current pointed memory case
     READ: str = "🐢"        # Read the value and pass it to the current pointed memory case
-    GO_FW: str = "🦆"       # Jump to after the matched GO_BK if the pointed byte equal 0
+    GO_FW: str = "🦆"       # Jump after the matched GO_BK if the pointed byte equal 0
     GO_BK: str = "🦛"       # Back after the matched GO_FW if the pointed byte is different than 0
 
 
@@ -29,9 +29,9 @@ class Engine:
 
     def __init__(self) -> None:
         self._stack: Deque[_Statement]
+        self._memory: Deque[int] = deque([0])
         self._pointer: int = 0
         self._stack_index: int = 0
-        self._memory: deque = deque([0])
 
     def run(self, instructions: str) -> None:
         self._stack = self._build_stack(instructions)
@@ -39,6 +39,7 @@ class Engine:
         while self._stack_index < len(self._stack):
             stmt: _Statement = self._stack[self._stack_index]
             getattr(self, self._STATEMENT_MAPPING[stmt])()
+            
             if stmt not in (_Statement.GO_FW, _Statement.GO_BK):
                 self._stack_index += 1
 
@@ -100,6 +101,8 @@ class Engine:
                 if opened_brackets == closed_brackets:
                     self._stack_index += i
                     break
+            else:
+                raise SyntaxError("Missing end loop.")
 
         self._stack_index += 1
         
@@ -119,6 +122,8 @@ class Engine:
                 if opened_brackets == closed_brackets:
                     self._stack_index = len(stack) - i - 1
                     break
+            else:
+                raise SyntaxError("Missing begin loop.")
 
         self._stack_index += 1
 
