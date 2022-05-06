@@ -55,19 +55,19 @@ Also, every pattern that is not in the instructions set is interpreted like a co
 So the current script can be run "as is" acording to the defined instructions set:
 
 ```
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++++++++    Add 10 to the pointer 0.
-++++          Add 4 to the pointer 0.
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++++++++    Add 10 to the pointer 0
+++++          Add 4 to the pointer 0
 
-.             Print the ASCII value of the pointer 0.
-.             Again print the ASCII value of the pointer 0.
+.             Print the ASCII value of the pointer 0
+.             Again print the ASCII value of the pointer 0
 ```
 
 ## Usage guide
@@ -112,7 +112,7 @@ MeowMeow    Decrement the pointer
 
 ```
 Meow        Increment the pointer
-Meow Meow    Decrement the pointer
+Meow Meow   Decrement the pointer
 ```
 
 Are ambigous instructions because the interpreter will always increment the pointer when it meet a Meow instruction.
