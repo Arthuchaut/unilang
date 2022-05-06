@@ -41,7 +41,7 @@ And the follow `Hello World!` programm will looks like:
 🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🦆🐇🐌🐌🐌🐌🐌🐌🐌🐇🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐇🐌🐌🐌🐇🐌🐬🐬🐬🐬🦧🦛🐇🐌🐌🙈🐇🐌🙈🐌🐌🐌🐌🐌🐌🐌🙈🙈🐌🐌🐌🙈🐇🐌🐌🙈🐬🐬🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🙈🐇🙈🐌🐌🐌🙈🦧🦧🦧🦧🦧🦧🙈🦧🦧🦧🦧🦧🦧🦧🦧🙈🐇🐌🙈🐇🙈
 ```
 
-Every syntaxe is possible while there matching the interpretation rules (never define an ambigous instruction with another). So we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
+Every syntaxe is possible while there are matching with the interpretation rules (never define an ambigous instruction with another). So we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
 
 :pencil: Notice that each instruction can be defined with a string length between 1 and "infinit".  
 Also, every character that is not in the instructions set is interpreted like a comment.  
