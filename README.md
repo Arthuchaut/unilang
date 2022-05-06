@@ -2,6 +2,13 @@
 
 A brainfuck like interpreter that support our own syntaxic set.  
 
+- [Unilang](#unilang)
+  - [Example](#example)
+  - [Usage guide](#usage-guide)
+- [Interpretation rules](#interpretation-rules)
+  - [Supported characters](#supported-characters)
+  - [Ambigous instructions](#ambigous-instructions)
+
 ## Example
 
 Acording to the Brainfuck specifications, the instructions set can be specify as follow:  
@@ -41,9 +48,9 @@ And the follow `Hello World!` programm will looks like:
 🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🦆🐇🐌🐌🐌🐌🐌🐌🐌🐇🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐇🐌🐌🐌🐇🐌🐬🐬🐬🐬🦧🦛🐇🐌🐌🙈🐇🐌🙈🐌🐌🐌🐌🐌🐌🐌🙈🙈🐌🐌🐌🙈🐇🐌🐌🙈🐬🐬🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🐌🙈🐇🙈🐌🐌🐌🙈🦧🦧🦧🦧🦧🦧🙈🦧🦧🦧🦧🦧🦧🦧🦧🙈🐇🐌🙈🐇🙈
 ```
 
-Every syntaxe is possible while there are matching with the interpretation rules (never define an ambigous instruction with another). So we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
-
-:pencil: Notice that each instruction can be defined with a string length between 1 and "infinit".  
+:pencil: Notice that each instruction can be defined with a string length between 1 and "infinit" so every syntaxe is possible while there are matching with the [interpretation rules](#interpretation-rules).  
+As a result, we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
+ 
 Also, every character that is not in the instructions set is interpreted like a comment.  
 So the current script can be run "as is":
 
@@ -88,7 +95,7 @@ This section describe the interpreter rules to define the instructions set.
 
 ## Supported characters
 
-All unicode characters that are not a space, tabulation or a new line one can be used to define an instruction set.
+All unicode characters that are not a space, tabulation or a new line can be used to define an instruction set.
 
 ## Ambigous instructions
 
@@ -99,6 +106,13 @@ An ambigous instruction is an instruction that can be considered with another du
 ```
 Meow        Increment the pointer
 MeowMeow    Decrement the pointer
+```
+
+**Same as:**
+
+```
+Meow        Increment the pointer
+Meow Meow    Decrement the pointer
 ```
 
 Are ambigous instructions because the interpreter will always increment the pointer when it meet a Meow instruction.
