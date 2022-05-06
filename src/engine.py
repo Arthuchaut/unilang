@@ -17,8 +17,8 @@ class _Statement(enum.Enum):
 
 class Engine:
     _STATEMENT_MAPPING: ClassVar[Mapping[str, str]] = {
-        _Statement.INC_PTN: "_inc_ptn",
-        _Statement.DEC_PTN: "_dec_ptn",
+        _Statement.INC_PTN: "_inc_pointer",
+        _Statement.DEC_PTN: "_dec_pointer",
         _Statement.INC_BYTE: "_inc_byte",
         _Statement.DEC_BYTE: "_dec_byte",
         _Statement.WRITE: "_write",
@@ -39,7 +39,7 @@ class Engine:
         while self._stack_index < len(self._stack):
             stmt: _Statement = self._stack[self._stack_index]
             getattr(self, self._STATEMENT_MAPPING[stmt])()
-            
+
             if stmt not in (_Statement.GO_FW, _Statement.GO_BK):
                 self._stack_index += 1
 
@@ -60,13 +60,13 @@ class Engine:
         
         return stack
     
-    def _inc_ptn(self) -> None:
+    def _inc_pointer(self) -> None:
         self._pointer += 1
 
         if self._pointer > len(self._memory) - 1:
             self._memory.append(0)
 
-    def _dec_ptn(self) -> None:
+    def _dec_pointer(self) -> None:
         self._pointer -= 1
 
         if self._pointer < 0:

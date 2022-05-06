@@ -42,7 +42,24 @@ And the follow `Hello World!` programm will looks like:
 ```
 
 :pencil: Notice that each instruction can be defined with a string length between 1 and "infinit".  
-Also, every character that is not in the instructions set is interpreted like a comment.
+Also, every character that is not in the instructions set is interpreted like a comment.  
+So the current script can be run "as is":
+
+```
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++++++++    Add 10 to the pointer 0.
+++++          Add 4 to the pointer 0.
+
+.             Print the ASCII value of the pointer 0.
+.             Again print the ASCII value of the pointer 0.
+```
 
 ## Usage guid
 
