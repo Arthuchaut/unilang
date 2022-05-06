@@ -51,8 +51,8 @@ And the follow `Hello World!` programm will looks like:
 :pencil: Notice that each instruction can be defined with a string length between 1 and "infinit" so every syntaxe is possible while there are matching with the [interpretation rules](#interpretation-rules).  
 As a result, we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
  
-Also, every character that is not in the instructions set is interpreted like a comment.  
-So the current script can be run "as is":
+Also, every pattern that is not in the instructions set is interpreted like a comment.  
+So the current script can be run "as is" acording to the instructions set:
 
 ```
 ++++++++++    Add 10 to the pointer 0.
