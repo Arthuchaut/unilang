@@ -52,7 +52,7 @@ And the follow `Hello World!` programm will looks like:
 As a result, we can define an [Esolang](https://esolangs.org/wiki/Ook!) or a [PenisScript](https://esolangs.org/wiki/PenisScript) if we want as well!
  
 Also, every pattern that is not in the instructions set is interpreted like a comment.  
-So the current script can be run "as is" acording to the instructions set:
+So the current script can be run "as is" acording to the defined instructions set:
 
 ```
 ++++++++++    Add 10 to the pointer 0.
