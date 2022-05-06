@@ -61,9 +61,9 @@ So the current script can be run "as is":
 .             Again print the ASCII value of the pointer 0.
 ```
 
-## Usage guid
+## Usage guide
 
-The interpreter can be used by passing the instructions directly in the command line or by specify a file pass to an Unilang script.  
+The interpreter can be used by passing the instructions directly in the command line or by specifying a file pass to an Unilang script.  
 
 **Example:**
 
