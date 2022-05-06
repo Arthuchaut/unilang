@@ -81,3 +81,33 @@ python -m src ./path/to/my/unilang/script
 
 To change the syntax of the instructions set, we have to hard code them in the `_Statement` enumerator of the `./src/engine.py` file.  
 Maybe I'll implement a config file later but I'm too lazy for that now. 🐇
+
+# Interpretation rules
+
+This section describe the interpreter rules to define the instructions set.
+
+## Supported characters
+
+All unicode characters that are not a space, tabulation or a new line one can be used to define an instruction set.
+
+## Ambigous instructions
+
+An ambigous instruction is an instruction that can be considered with another due to the similarity of these pattern.  
+
+**For example:**
+
+```
+Meow        Increment the pointer
+MeowMeow    Decrement the pointer
+```
+
+Are ambigous instructions because the interpreter will always increment the pointer when it meet a Meow instruction.
+
+**While this following set:**
+
+```
+Meow        Increment the pointer
+Meor        Decrement the pointer
+```
+
+Is a correct instructions set.
