@@ -96,7 +96,7 @@ This section describe the interpreter rules to define the instructions set.
 
 ## Supported characters
 
-All unicode characters that are not a space, tabulation or a new line can be used to define an instruction set.
+All unicode characters can be used to define an instruction set.
 
 ## The instruction string length
 
