@@ -14,7 +14,7 @@ A brainfuck like interpreter that support our own syntaxic set.
 
 ## Requirements
 
-No virtual environment or any external dependencies are required.
+No virtual environment or any external dependencies are required unless for dev environment.
 
 - Python >= 3.9
 

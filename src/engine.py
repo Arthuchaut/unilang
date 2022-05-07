@@ -31,7 +31,6 @@ class Engine:
             if stmt not in (Statement.GO_FW, Statement.GO_BK):
                 self._stack_index += 1
 
-
     def _build_stack(self, instructions: str) -> Deque[Statement]:
         stack: Deque[Statement] = deque([])
         idx: int = 0
@@ -44,9 +43,9 @@ class Engine:
                     break
             else:
                 idx += 1
-        
+
         return stack
-    
+
     def _inc_pointer(self) -> None:
         self._pointer += 1
 
@@ -79,7 +78,7 @@ class Engine:
             opened_brackets: int = 0
             closed_brackets: int = 0
 
-            for i, stmt in enumerate(self._stack[self._stack_index:]):
+            for i, stmt in enumerate(list(self._stack)[self._stack_index :]):
                 if stmt is Statement.GO_FW:
                     opened_brackets += 1
                 elif stmt is Statement.GO_BK:
@@ -92,13 +91,12 @@ class Engine:
                 raise SyntaxError("Missing end loop.")
 
         self._stack_index += 1
-        
 
     def _go_backward(self) -> None:
         if self._memory[self._pointer] != 0:
             opened_brackets: int = 0
             closed_brackets: int = 0
-            stack: Deque[Statement] = list(self._stack)[:self._stack_index+1]
+            stack: Deque[Statement] = list(self._stack)[: self._stack_index + 1]
 
             for i, stmt in enumerate(stack[::-1]):
                 if stmt is Statement.GO_FW:
@@ -113,5 +111,3 @@ class Engine:
                 raise SyntaxError("Missing begin loop.")
 
         self._stack_index += 1
-
-
