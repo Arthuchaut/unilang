@@ -3,11 +3,31 @@
 A brainfuck like interpreter that support our own syntaxic set.  
 
 - [Unilang](#unilang)
-  - [Example](#example)
   - [Usage guide](#usage-guide)
+  - [Example](#example)
 - [Interpretation rules](#interpretation-rules)
   - [Supported characters](#supported-characters)
+  - [The instruction string length](#the-instruction-string-length)
   - [Ambigous instructions](#ambigous-instructions)
+
+## Usage guide
+
+The interpreter can be used by passing the instructions directly in the command line or by specifying a file pass to an Unilang script.  
+
+**Example:**
+
+```sh
+python -m src "<unilang_instructions>"
+```
+
+**Or:**
+
+```sh
+python -m src ./path/to/my/unilang/script
+```
+
+To change the syntax of the instructions set, we have to hard code them in the `_Statement` enumerator of the `./src/engine.py` file.  
+Maybe I'll implement a config file later but I'm too lazy for that now. 🐇
 
 ## Example
 
@@ -70,25 +90,6 @@ So the current script can be run "as is" acording to the defined instructions se
 .             Again print the ASCII value of the pointer 0
 ```
 
-## Usage guide
-
-The interpreter can be used by passing the instructions directly in the command line or by specifying a file pass to an Unilang script.  
-
-**Example:**
-
-```sh
-python -m src "<unilang_instructions>"
-```
-
-**Or:**
-
-```sh
-python -m src ./path/to/my/unilang/script
-```
-
-To change the syntax of the instructions set, we have to hard code them in the `_Statement` enumerator of the `./src/engine.py` file.  
-Maybe I'll implement a config file later but I'm too lazy for that now. 🐇
-
 # Interpretation rules
 
 This section describe the interpreter rules to define the instructions set.
@@ -96,6 +97,10 @@ This section describe the interpreter rules to define the instructions set.
 ## Supported characters
 
 All unicode characters that are not a space, tabulation or a new line can be used to define an instruction set.
+
+## The instruction string length
+
+An instruction can be defined with a string length of 1 to "infinit" (of course it should be ridiculous to define a statement with a length of 1 000 000 😏).
 
 ## Ambigous instructions
 
@@ -121,7 +126,7 @@ Are ambigous instructions because the interpreter will always increment the poin
 
 ```
 Meow        Increment the pointer
-Meor        Decrement the pointer
+Meor        Decrement the pointer 
 ```
 
 Is a correct instructions set.
