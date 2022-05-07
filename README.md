@@ -3,12 +3,21 @@
 A brainfuck like interpreter that support our own syntaxic set.  
 
 - [Unilang](#unilang)
+  - [Requirements](#requirements)
   - [Usage guide](#usage-guide)
-  - [Example](#example)
+  - [Modify the statements syntax](#modify-the-statements-syntax)
+    - [Example](#example)
 - [Interpretation rules](#interpretation-rules)
   - [Supported characters](#supported-characters)
   - [The instruction string length](#the-instruction-string-length)
   - [Ambigous instructions](#ambigous-instructions)
+
+## Requirements
+
+No virtual environment or any external dependencies are required.
+
+- Python >= 3.9
+
 
 ## Usage guide
 
@@ -23,15 +32,18 @@ python -m src "<unilang_instructions>"
 **Or:**
 
 ```sh
-python -m src ./path/to/my/unilang/script
+python -m src ./path/to/my/unilang/script.uni
 ```
 
-To change the syntax of the instructions set, we have to hard code them in the `_Statement` enumerator of the `./src/engine.py` file.  
-Maybe I'll implement a config file later but I'm too lazy for that now. 🐇
+:pencil: Notice that the `.uni` extension is just a conventional way to distinguish an Unilang script from another file. You can define whatever you want as well.
 
-## Example
+## Modify the statements syntax
 
-Acording to the Brainfuck specifications, the instructions set can be specify as follow:  
+The statements are specified in the `src/config.py` file so we can modified these pattern as we wish.  
+
+### Example
+
+Acording to the Brainfuck specifications, the instructions set can be defined as follow:  
 
 ```
 >   Increment the pointer​
@@ -100,11 +112,11 @@ All unicode characters can be used to define an instruction set.
 
 ## The instruction string length
 
-An instruction can be defined with a string length of 1 to "infinit" (of course it should be ridiculous to define a statement with a length of 1 000 000 😏).
+An instruction can be defined with a string length from 1 to "infinit" (of course it should be ridiculous to define a statement with a length of 1 000 000 😏).
 
 ## Ambigous instructions
 
-An ambigous instruction is an instruction that can be considered with another due to the similarity of these pattern.  
+An ambigous instruction is an statement that can be confused with another due to the similarity of these pattern.  
 
 **For example:**
 
@@ -120,7 +132,7 @@ Meow        Increment the pointer
 Meow Meow   Decrement the pointer
 ```
 
-Are ambigous instructions because the interpreter will always increment the pointer when it meet a Meow instruction.
+Are ambigous instructions because the interpreter will always increment the pointer when it meet a `Meow` instruction.
 
 **While this following set:**
 
