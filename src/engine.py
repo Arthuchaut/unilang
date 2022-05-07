@@ -57,7 +57,6 @@ class Engine:
     def _build_stack(self, instructions: str) -> Deque[_Statement]:
         stack: Deque[_Statement] = deque([])
         idx: int = 0
-        instructions = re.sub(r"[\n\t\s]*", "", instructions)
 
         while idx < len(instructions):
             for stmt in _Statement:
