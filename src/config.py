@@ -2,7 +2,7 @@ import enum
 
 
 class Statement(enum.Enum):
-    INC_PTN: str = "lol"  # Increment the pointer​
+    INC_PTN: str = ">"  # Increment the pointer​
     DEC_PTN: str = "<"  # Decrement the pointer
     INC_BYTE: str = "+"  # Increment the byte in the current pointed memory case
     DEC_BYTE: str = "-"  # Decrement the byte in the current pointed memory case
